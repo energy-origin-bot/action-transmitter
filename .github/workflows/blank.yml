@@ -34,3 +34,10 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+            
+      - name: Invoke workflow in another repo with inputs
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: CI
+          repo: energy-origin-bot/action-receiver
+          token: ${{ secrets.PRIVATE_KEY_TRANSMITTER_RECEIVER_EXP }}

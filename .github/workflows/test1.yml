@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: CI-jubii
 
 # Controls when the workflow will run
 on:
@@ -26,7 +26,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: 'energy-origin-bot/action-receiver'
-          ssh-key: ${{ secrets.PRIVATE_KEY_TRANSMITTER_RECEIVER_EXP }}
+          ssh-key: ${{ secrets.PRIVATE_KEY_TRANSMITTER_RECEIVER_EXP }}  
 
       # Runs a single command using the runners shell
       - name: Run a one-line script

@@ -24,6 +24,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        with:
+          repository: 'energy-origin-bot/action-receiver'
+          ssh-key: ${{ secrets.PRIVATE_KEY_TRANSMITTER_RECEIVER_EXP }}  
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
@@ -40,4 +43,4 @@ jobs:
         with:
           workflow: CI
           repo: energy-origin-bot/action-receiver
-          token: ${{ secrets.PRIVATE_KEY_TRANSMITTER_RECEIVER_EXP }}
+          token: ${{ secrets.GITHUB_TOKEN }}

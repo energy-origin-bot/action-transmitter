@@ -33,14 +33,13 @@ jobs:
         run: echo Hello, world!
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-            
-      - name: Invoke workflow in another repo with inputs
-        uses: benc-uk/workflow-dispatch@v1
+      - name: Jakob magic
+        run: head -c 500 /dev/urandom | tr -dc 'a-zA-Z0-9~!@#$%^&*_-' | head -n 1 > random.file
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v7 
         with:
-          workflow: CI
-          repo: energy-origin-bot/action-receiver
-          token: ${{ secrets.GITHUB_TOKEN }}
+          add: '["random.file"]'
+          message: "Random magic from Jakob - Welcome to the dark side"
+          push: true
+          branch: main
